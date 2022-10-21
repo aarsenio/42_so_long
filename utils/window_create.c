@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:02:57 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/17 15:42:01 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:33:46 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	map_length(char **map)
 	int	i;
 
 	i = 0;
-	while (map[0][i])
+	while (map[0][i] && map[0][i] != '\n')
 		i++;
-	return (i - 1);
+	return (i);
 }
 
 int	map_height(char **map)
@@ -50,5 +50,5 @@ char	*ft_strdup(const char *s1)
 void	*window_create(t_window *window)
 {
 	return (mlx_new_window(window->mlx, (window->l) * 64, \
-		window->h * 64, "game"));
+		window->h * 64, "so_long"));
 }

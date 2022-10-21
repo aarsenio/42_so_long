@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:40:43 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/21 16:21:00 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:34:33 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	format_check(t_window *data, int i, int j)
 	while (data->map[j])
 	{
 		i = 0;
-		while (data->map[j][i])
+		while (data->map[j][i] && data->map[j][i] != '\n')
 		{
 			if (data->map[j][i] == 'P')
 			{
@@ -60,10 +60,11 @@ int	format_check(t_window *data, int i, int j)
 			}
 			i++;
 		}
-		if ((i - 1) != data->l || data->map[j][i - 1] != '\n')
+		if (i != data->l)
 			return (0);
 		j++;
 	}
+	
 	return (1);
 }
 
