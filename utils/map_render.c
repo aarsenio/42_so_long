@@ -6,13 +6,13 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:10:22 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/24 17:08:36 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:44:00 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
 
-static void	coin_render(t_window *data)
+static void	animation_render(t_window *data)
 {
 	int			i;
 	int			j;
@@ -26,6 +26,9 @@ static void	coin_render(t_window *data)
 			if (data->map[j][i] == 'C')
 				mlx_put_image_to_window(data->mlx, \
 				data->mlx_win, data->coin, i * 64, j * 64);
+			if (data->map[j][i] == '2')
+				mlx_put_image_to_window(data->mlx, \
+				data->mlx_win, data->enemy, i * 64, j * 64);
 			i++;
 		}
 		j++;
@@ -36,6 +39,7 @@ int	animation(void *param)
 {
 	t_window	*data;
 	static int	index = 6;
+	static int	index_e = 12;
 	static int	count;
 
 	data = param;
@@ -43,9 +47,13 @@ int	animation(void *param)
 	{
 		if (index == 10)
 			index = 6;
+		if (index_e == 15)
+			index_e = 12;
 		data->coin = data->images[index];
+		data->enemy = data->images[index_e];
 		index++;
-		coin_render(data);
+		index_e++;
+		animation_render(data);
 		count = 0;
 	}
 	else
@@ -60,10 +68,10 @@ static void	image_load(t_window *window, int x, int y, int i)
 	str = ft_strdup("images/00.xpm");
 	if (!str)
 		return ;
-	window->images = malloc(14 * sizeof(void *));
+	window->images = malloc(16 * sizeof(void *));
 	if (!window->images)
 		return ;
-	while (i < 13)
+	while (i < 15)
 	{
 		window->images[i] = mlx_xpm_file_to_image(window->mlx, str, &x, &y);
 		if (i == 9)
@@ -74,7 +82,7 @@ static void	image_load(t_window *window, int x, int y, int i)
 		str[8] += 1;
 		i++;
 	}
-	window->images[13] = NULL;
+	window->images[15] = NULL;
 	free(str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:53:13 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/24 17:08:47 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:38:12 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_window
 {
 	void	**images;
 	void	*coin;
+	void	*enemy;
 	void	*mlx;
 	void	*mlx_win;
 	char	**map;
