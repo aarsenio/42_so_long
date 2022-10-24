@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:53:13 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/17 15:59:56 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:08:47 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,9 @@ int		format_check(t_window *data, int i, int j);
 int		border_check(t_window *data, int i);
 int		name_check(char *str, int i);
 void	path_checker(char **mapa, int x, int y);
-void	image_load(t_window *window, int x, int y, int i);
-void	map_printer(t_window *window, int j, int i);
 void	map_render(t_window *window, int j, int i);
 int		animation(void *param);
-void	coin_render(t_window *data);
 int		key(int keycode, void *param);
-char	*ft_itoa(int n);
-int		coin_check(int c);
-void	print_move(int keycode, t_window *data);
 void	print_error(t_window *data, char *str, int error);
 int		exit_game(t_window *data);
 

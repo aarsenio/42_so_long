@@ -6,11 +6,31 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:10:22 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/21 16:08:06 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:08:36 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/so_long.h"
+
+static void	coin_render(t_window *data)
+{
+	int			i;
+	int			j;
+
+	j = 0;
+	while (data->map[j])
+	{
+		i = 0;
+		while (data->map[j][i])
+		{
+			if (data->map[j][i] == 'C')
+				mlx_put_image_to_window(data->mlx, \
+				data->mlx_win, data->coin, i * 64, j * 64);
+			i++;
+		}
+		j++;
+	}
+}
 
 int	animation(void *param)
 {
@@ -33,27 +53,7 @@ int	animation(void *param)
 	return (0);
 }
 
-void	coin_render(t_window *data)
-{
-	int			i;
-	int			j;
-
-	j = 0;
-	while (data->map[j])
-	{
-		i = 0;
-		while (data->map[j][i])
-		{
-			if (data->map[j][i] == 'C')
-				mlx_put_image_to_window(data->mlx, \
-				data->mlx_win, data->coin, i * 64, j * 64);
-			i++;
-		}
-		j++;
-	}
-}
-
-void	image_load(t_window *window, int x, int y, int i)
+static void	image_load(t_window *window, int x, int y, int i)
 {
 	char	*str;
 
@@ -78,7 +78,7 @@ void	image_load(t_window *window, int x, int y, int i)
 	free(str);
 }
 
-void	map_printer(t_window *window, int j, int i)
+static void	map_printer(t_window *window, int j, int i)
 {
 	if (window->map[j][i] == '1')
 		mlx_put_image_to_window(window->mlx, \
