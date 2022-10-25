@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:10:22 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/24 17:44:00 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:29:49 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	animation(void *param)
 	{
 		if (index == 10)
 			index = 6;
-		if (index_e == 15)
+		if (index_e == 16)
 			index_e = 12;
 		data->coin = data->images[index];
 		data->enemy = data->images[index_e];
@@ -68,10 +68,10 @@ static void	image_load(t_window *window, int x, int y, int i)
 	str = ft_strdup("images/00.xpm");
 	if (!str)
 		return ;
-	window->images = malloc(16 * sizeof(void *));
+	window->images = malloc(17 * sizeof(void *));
 	if (!window->images)
 		return ;
-	while (i < 15)
+	while (i < 16)
 	{
 		window->images[i] = mlx_xpm_file_to_image(window->mlx, str, &x, &y);
 		if (i == 9)
@@ -82,7 +82,7 @@ static void	image_load(t_window *window, int x, int y, int i)
 		str[8] += 1;
 		i++;
 	}
-	window->images[15] = NULL;
+	window->images[16] = NULL;
 	free(str);
 }
 
