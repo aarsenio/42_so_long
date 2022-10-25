@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 09:35:58 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/24 17:05:35 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:36:34 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	print_move(int x, int y, int keycode, t_window *data)
 {
 	static int	count_steps;
 	char		*str;
-	
+
 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->images[5], \
 		data->x, data->y);
 	data->x += (x * 64);

@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:40:43 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/21 16:34:33 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:36:24 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	format_check(t_window *data, int i, int j)
 			return (0);
 		j++;
 	}
-	
 	return (1);
 }
 
