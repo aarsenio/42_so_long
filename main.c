@@ -6,7 +6,7 @@
 /*   By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:52:54 by aarsenio          #+#    #+#             */
-/*   Updated: 2022/10/17 15:53:40 by aarsenio         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:02:40 by aarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static void	validater(t_window *data, int j, int i)
 		}
 		j++;
 	}
-	if (!(data->tmp[data->exit_x + 1][data->exit_y] == 'P' || data->tmp[\
-	data->exit_x - 1][data->exit_y] == 'P' || data->tmp[data->exit_x][\
-	data->exit_y + 1] == 'P' || data->tmp[data->exit_x] \
-	[data->exit_y - 1] == 'P'))
+	if (!(data->tmp[data->exit_y + 1][data->exit_x] == 'P' || data->tmp[\
+	data->exit_y - 1][data->exit_x] == 'P' || data->tmp[data->exit_y][\
+	data->exit_x + 1] == 'P' || data->tmp[data->exit_y] \
+	[data->exit_x - 1] == 'P'))
 		print_error(data, "Path is not valid", 1);
 }
 
